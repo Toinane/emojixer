@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 70px 1fr 25vw;
+  align-items: center;
+  justify-items: center;
+  background: url('assets/background.svg') 35% center no-repeat;
+  background-size: 530px 530px;
+  overflow: hidden;
+}
+  #logo {
+    z-index: -1;
+    position: absolute;
+    height: 50px;
+    top: 0; left: 100px;
+  }
+
+  #order {
+    width: 80px;
+    height: 100vh;
+    padding: 30px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #order::before {
+    content: '';
+    position: fixed;
+    top: -2px; left: -10px;
+    width: 80px;
+    height: 101vh;
+    transform: rotate(2deg);
+    background: #E9F4FC;
+  }
+
+  #canvas {
+    width: 256px; height: 256px;
+  }
+
+  #menu {
+    position: relative;
+    left: 24px;
+    padding: 30px 0px;
+    padding-top: 50px;
+    box-sizing: border-box;
+    width: 25vw;
+    height: 100vh;
+    overflow-y: scroll;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    transition: 0.5s;
+  }
+  #menu:hover {
+    top: 0; left: 0;
+    padding: 30px 0;
+  }
+  #menu::before {
+    content: '';
+    z-index: -1;
+    position: fixed;
+    top: 80px; right: -54px;
+    transform: rotate(-10deg);
+    width: 25vw; height: 110vh;
+    background: #E9FCE3;
+    transition: 0.7s;
+  }
+  #menu:hover::before {
+    transform: rotate(-2deg);
+    top: -5px; right: 5px;
+  }
+  #menu::after {
+    content: '';
+    top: 0; right: -16px;
+    position: fixed;
+    width: 16px;
+    height: 100vh;
+    background: #E9FCE3;
+    transition: 0.5s;
+  }
+  #menu:hover::after {
+    right: 0;
+  }
+    #menu div {
+      width: 64px; height: 64px;
+      cursor: pointer;
+      margin: 5px;
+      background-size: 64px 64px;
+    }
+    #menu div:not(.body)::before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 64px; height: 64px;
+      background: url('assets/example.svg');
+      background-size: 64px 64px;
+    }
