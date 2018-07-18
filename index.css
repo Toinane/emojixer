@@ -24,14 +24,18 @@ body {
     width: 80px;
     height: 100vh;
     padding: 30px 0;
+    margin-left: 5px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
   }
   #order::before {
     content: '';
     position: fixed;
+    z-index: -1;
     top: -2px; left: -10px;
     width: 80px;
     height: 101vh;
@@ -87,13 +91,13 @@ body {
   #menu:hover::after {
     right: 0;
   }
-    #menu div {
+    #menu div, #order div {
       width: 64px; height: 64px;
       cursor: pointer;
       margin: 5px;
       background-size: 64px 64px;
     }
-    #menu div:not(.body)::before {
+    #menu div.yellow::before, #order div.yellow::before {
       content: '';
       position: absolute;
       z-index: -1;
